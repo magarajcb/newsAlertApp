@@ -11,4 +11,4 @@ const notificationSchema = new mongoose.Schema({
     read: { type: Boolean, default: false },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Notification', notificationSchema,'test2');
+module.exports = mongoose.model('Notification', notificationSchema);
