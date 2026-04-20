@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "newsAlertApp",
+  "keywords": [
+    "Will",
+    "become",
+    "software",
+    "developer"
+  ],
+  "homepage": "https://github.com/magarajcb/newsAlertApp#readme",
+  "bugs": {
+    "url": "https://github.com/magarajcb/newsAlertApp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magarajcb/newsAlertApp.git"
+  },
+  "license": "ISC",
+  "author": "C B Maharaj",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "all",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.15.1",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.4.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
