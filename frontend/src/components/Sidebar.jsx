@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { HiHome, HiCompass, HiBookmark, HiCog, HiLogout, HiBell } from 'react-icons/hi';
+import { HiHome, HiCompass, HiBookmark, HiCog, HiLogout, HiBell } from 'react-icons/hi2';
 import toast from 'react-hot-toast';
 
 const Sidebar = () => {
