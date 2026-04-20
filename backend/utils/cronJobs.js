@@ -42,4 +42,4 @@ const startNewsAlerts = () => {
     console.log('✅ Cron jobs started');
 };
 
-module.exports = { startNewsAlerts, processAlerts };    
+module.exports = { startNewsAlerts };    
