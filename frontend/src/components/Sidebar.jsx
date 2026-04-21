@@ -67,7 +67,7 @@ const Sidebar = () => {
             {/* Subscribe Card */}
             <div className="bg-purple-50 rounded-2xl p-4 mt-4">
                 <p className="font-semibold text-gray-800 text-sm mb-1">Subscribe Premium</p>
-                <p className="text-xs text-gray-500 mb-3">Get breaking news alerts and exclusive updates.</p>
+                <p className="text-xs text-gray-500 mb-3">Currently not available.</p>
                 <button className="w-full bg-purple-600 text-white py-2 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
                     Subscribe
                 </button>
