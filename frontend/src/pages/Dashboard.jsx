@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import API from "../services/api";
 import toast, { Toaster } from "react-hot-toast";
@@ -8,7 +9,7 @@ const CHANNELS = [
   "BBC NEWS",
   "CNN NEWS",
   "NDTV",
-  "AL JAZEERA",
+  "AL JZEERA",
   "ABC NEWS",
 ];
 
@@ -23,6 +24,8 @@ const CATEGORIES = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("technology");
@@ -45,14 +48,25 @@ const Dashboard = () => {
     fetchNews(selectedCategory);
   }, [selectedCategory]);
 
+  const handleChannelClick = (channel) => {
+    const routes = {
+      "BBC NEWS": "/channel/bbc",
+      "CNN NEWS": "/channel/cnn",
+      "FOX NEWS": "/channel/fox",
+      "NDTV": "/channel/ndtv",
+      "AL JZEERA": "/channel/aljazeera",
+      "ABC NEWS": "/channel/abc",
+    };
+
+    navigate(routes[channel]);
+  };
+
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Toaster position="top-right" />
       <Sidebar />
 
-      {/* Main Content */}
       <div className="ml-64 flex-1 p-8">
-        {/* Explore Channels */}
         <h2 className="text-xl font-bold text-gray-800 mb-4">
           Explore Channels
         </h2>
@@ -61,14 +75,14 @@ const Dashboard = () => {
           {CHANNELS.map((channel) => (
             <button
               key={channel}
-              className="border border-gray-200 rounded-xl py-4 text-sm font-semibold text-gray-700 hover:border-purple-400 hover:text-purple-600 hover:bg-purple-50 transition bg-white"
+              onClick={() => handleChannelClick(channel)}
+              className="border border-gray-200 rounded-xl py-4 text-sm font-semibold text-gray-700 hover:border-purple-400 hover:text-purple-600 hover:bg-purple-50 transition bg-white cursor-pointer"
             >
               {channel}
             </button>
           ))}
         </div>
 
-        {/* Category Tabs */}
         <div className="flex gap-2 flex-wrap mb-6">
           {CATEGORIES.map((cat) => (
             <button
@@ -85,7 +99,6 @@ const Dashboard = () => {
           ))}
         </div>
 
-        {/* Today's Headlines */}
         <h2 className="text-xl font-bold text-gray-800 mb-4">
           Today's Headlines
         </h2>
@@ -120,8 +133,7 @@ const Dashboard = () => {
                   </h3>
 
                   <p className="text-xs text-gray-400 mt-2">
-                    Updated •{" "}
-                    {new Date(article.publishedAt).toLocaleTimeString([], {
+                    Updated • {new Date(article.publishedAt).toLocaleTimeString([], {
                       hour: "2-digit",
                       minute: "2-digit",
                     })}
