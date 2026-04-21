@@ -36,7 +36,7 @@ const processAlerts = async (frequency) => {
 };
 
 const startNewsAlerts = () => {
-    cron.schedule('*/15 * * * *', () => { console.log('⚡ Immediate alerts...'); processAlerts('immediate'); });
+    cron.schedule('* * * * *', () => { console.log('⚡ Immediate alerts...'); processAlerts('immediate'); });
     cron.schedule('0 * * * *', () => { console.log('🕐 Hourly alerts...'); processAlerts('hourly'); });
     cron.schedule('0 8 * * *', () => { console.log('📅 Daily alerts...'); processAlerts('daily'); });
     console.log('✅ Cron jobs started');

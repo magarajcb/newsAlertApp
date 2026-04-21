@@ -11,7 +11,7 @@ mongoose
         console.log(' Connected to MongoDB Atlas');
         app.listen(PORT, () => {
             console.log(`Server running on port ${PORT}`);
-            // startNewsAlerts();
+            startNewsAlerts();
         });
     })
     .catch((error) => {
