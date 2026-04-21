@@ -19,7 +19,7 @@ const App = () => {
                     <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                     <Route path="/explore" element={<ProtectedRoute><Explore /></ProtectedRoute>} />
                     <Route path="/preferences" element={<ProtectedRoute><Preferences /></ProtectedRoute>} />
-                    <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
+                    <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} /> 
                 </Routes>
             </AuthProvider>
         </BrowserRouter>

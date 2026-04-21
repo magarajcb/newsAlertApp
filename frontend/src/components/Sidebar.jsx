@@ -1,6 +1,13 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { HiHome, HiCompass, HiBookmark, HiCog, HiLogout, HiBell } from 'react-icons/hi2';
+import {
+  HiHome,
+  HiMagnifyingGlass,
+  HiBookmark,
+  HiCog,
+  HiArrowRightOnRectangle,
+  HiBell
+} from 'react-icons/hi2';
 import toast from 'react-hot-toast';
 
 const Sidebar = () => {
@@ -15,7 +22,7 @@ const Sidebar = () => {
 
     const navItems = [
         { to: '/dashboard', icon: <HiHome size={20} />, label: 'Home' },
-        { to: '/explore', icon: <HiCompass size={20} />, label: 'Explore' },
+{ to: '/explore', icon: <HiMagnifyingGlass size={20} />, label: 'Explore' },,
         { to: '/notifications', icon: <HiBell size={20} />, label: 'Notifications' },
         { to: '/preferences', icon: <HiCog size={20} />, label: 'Settings' },
     ];
@@ -52,7 +59,7 @@ const Sidebar = () => {
                     onClick={handleLogout}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-500 transition mt-2"
                 >
-                    <HiLogout size={20} />
+                    <HiArrowRightOnRectangle size={20} />
                     Logout
                 </button>
             </nav>
