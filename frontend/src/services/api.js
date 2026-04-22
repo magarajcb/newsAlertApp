@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'https://newsalertapp-backend.onrender.com',
+    baseURL: 'http://localhost:5173/',
     withCredentials: true,
     headers: { 'Content-Type': 'application/json' }
 });
