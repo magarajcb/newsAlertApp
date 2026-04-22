@@ -29,13 +29,13 @@ const Sidebar = () => {
 
     return (
         <div className="w-64 min-h-screen bg-white border-r border-gray-100 flex flex-col px-4 py-6 fixed left-0 top-0">
-            {/* Logo */}
+           
             <div className="flex items-center gap-2 mb-8 px-2">
                 <div className="w-6 h-6 bg-purple-600 rounded-md"></div>
                 <span className="font-bold text-gray-800 text-lg">NewsAlert</span>
             </div>
 
-            {/* Nav Items */}
+         
             <nav className="flex flex-col gap-1 flex-1">
                 {navItems.map(({ to, icon, label }) => (
                     <NavLink
@@ -54,7 +54,7 @@ const Sidebar = () => {
                     </NavLink>
                 ))}
 
-                {/* Logout */}
+              
                 <button
                     onClick={handleLogout}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-500 transition mt-2"
@@ -64,11 +64,12 @@ const Sidebar = () => {
                 </button>
             </nav>
 
-            {/* Subscribe Card */}
+          
             <div className="bg-purple-50 rounded-2xl p-4 mt-4">
                 <p className="font-semibold text-gray-800 text-sm mb-1">Subscribe Premium</p>
                 <p className="text-xs text-gray-500 mb-3">Currently not available.</p>
-                <button className="w-full bg-purple-600 text-white py-2 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
+                <button  onClick={() => toast("Premium subscription is currently not available")}
+                className="w-full bg-purple-600 text-white py-2 rounded-xl text-sm font-medium hover:bg-purple-700 transition">
                     Subscribe
                 </button>
             </div>

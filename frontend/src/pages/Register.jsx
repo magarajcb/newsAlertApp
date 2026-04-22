@@ -30,7 +30,7 @@ const Register = () => {
     return (
         <div className="flex h-screen">
             <Toaster position="top-right" />
-            {/* Left - Form */}
+      
             <div className="w-1/2 flex flex-col justify-center px-16 bg-white">
                 <div className="flex items-center gap-2 mb-10">
                     <div className="w-5 h-5 bg-purple-600 rounded-sm"></div>
@@ -70,7 +70,7 @@ const Register = () => {
                     <Link to="/login" className="text-purple-600 font-medium hover:underline">Login</Link>
                 </p>
             </div>
-            {/* Right - Purple Panel */}
+           
             <div className="w-1/2 bg-purple-300 flex items-center justify-center">
                 <div className="bg-purple-200 rounded-3xl px-16 py-12 text-center">
                     <p className="text-white font-semibold text-xl mb-6">Login to get News Alerts from us</p>

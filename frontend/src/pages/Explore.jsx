@@ -17,8 +17,7 @@ const Explore = () => {
         setSearched(true);
         try {
             const res = await API.get(`/api/news?category=${category}`);
-            // Safety check for data nesting
-            setNews(res.data.articles || []);
+                     setNews(res.data.articles || []);
         } catch (error) {
             toast.error('Failed to fetch news');
             console.error("Fetch Error:", error);
@@ -31,14 +30,11 @@ const Explore = () => {
         <div className="flex min-h-screen bg-gray-50">
             <Toaster position="top-right" />
             <Sidebar />
-            
-            {/* Added margin to prevent content from hiding under Sidebar if it's fixed */}
-            <div className="ml-64 flex-1 p-8">
+                                   <div className="ml-64 flex-1 p-8">
                 <h1 className="text-2xl font-bold text-gray-800 mb-2">Explore</h1>
                 <p className="text-gray-400 mb-6">Browse news by category</p>
 
-                {/* Category Selection Bar */}
-                <div className="flex gap-3 flex-wrap mb-8">
+                              <div className="flex gap-3 flex-wrap mb-8">
                     {CATEGORIES.map(cat => (
                         <button
                             key={cat}
@@ -53,8 +49,7 @@ const Explore = () => {
                         </button>
                     ))}
                 </div>
-
-                {/* News Rendering Logic */}
+              
                 {loading ? (
                     <div className="flex justify-center items-center h-64">
                         <div className="w-10 h-10 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
