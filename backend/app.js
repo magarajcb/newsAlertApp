@@ -7,7 +7,7 @@ const newsRouter = require('./routes/newsRoutes');
 const notificationRouter = require('./routes/notificationRoutes');
 
 const app = express();
-
+app.set("trust proxy", 1);
 
 app.use(cors({
     origin: 'https://newsalertapp-frontend.netlify.app',
