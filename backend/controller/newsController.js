@@ -9,7 +9,7 @@ const newsController = {
                 params: {
                     q: category,
                     lang: 'en',
-                    max: 9,
+                    max: 12,
                     apikey: process.env.GNEWS_API_KEY
                 }
             });
