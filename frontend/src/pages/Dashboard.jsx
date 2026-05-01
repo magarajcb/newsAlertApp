@@ -45,7 +45,7 @@ const Dashboard = () => {
 
         {/* 🔥 Trending Section */}
         <h2 className="text-xl font-bold text-gray-800 mb-4">
-          🔥 Trending News
+          🔥 Trending News(Top 3)
         </h2>
 
         <div className="grid grid-cols-3 gap-4 mb-8">
