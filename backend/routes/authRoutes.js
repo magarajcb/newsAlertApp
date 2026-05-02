@@ -3,9 +3,14 @@ const { registerUser, loginUser, me, logOut } = require('../controller/authContr
 const { isAuthenticated } = require('../middleware/auth');
 
 const authRouter = express.Router();
+
 authRouter.post('/register', registerUser);
 authRouter.post('/login', loginUser);
-authRouter.post('/me', isAuthenticated, me);
+
+// ✅ FIXED: use GET
+authRouter.get('/me', isAuthenticated, me);
+
+// ✅ logout stays POST
 authRouter.post('/logout', isAuthenticated, logOut);
 
 module.exports = authRouter;

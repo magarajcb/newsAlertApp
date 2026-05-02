@@ -104,9 +104,10 @@ const authController = {
             const { password: pass, __v, ...userData } = user.toObject();
 
             return res.status(200).json({
-                message: 'Login successful',
-                user: userData
-            });
+    message: 'Login successful',
+    user: userData,
+    token // 
+});
 
         } catch (error) {
             console.log(error);
