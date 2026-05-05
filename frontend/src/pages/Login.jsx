@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Navigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-    const { login } = useAuth();
+   const { login, user } = useAuth();
     const navigate = useNavigate();
+    
+
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [loading, setLoading] = useState(false);
+    if (user) {
+    return <Navigate to="/dashboard" />;
+}
 
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 

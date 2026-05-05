@@ -16,7 +16,7 @@ const App = () => {
                 <Routes>
 
                     {/* Public Routes */}
-                    <Route path="/" element={<Navigate to="/register" />} />
+                   <Route path="/" element={<Navigate to="/dashboard" />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
 
